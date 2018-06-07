@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ScrollBox</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Montserrat" rel="stylesheet">
+</head>
+<body>
+    <div class="scrollbox-container">
+        <div class="scrollbox">
+            <ul>
+                <li>ESTO ES UN SCROLLBOX</li>
+                <li>HECHO EN CSS</li>
+                <li>CON ANIMACIONES.</li>
+            </ul>
+        </div>   
+    </div>
+    <header>
+        <h1 class="center-align">ScrollBox CSS</h1>
+    </header>
+    <main>
+        <section class="section grey lighten-5" id="introduction">
+            <article class="container">
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <p>
+                            Seguramente alguna vez has visto ese efecto vistoso de como se va desplazando un texto en una caja ocultandose tanto en la parte de arriba como en la parte de abajo. Y la verdad es que es muy sencillo de hacer. Ademas de que resulta bastante atractivo como decoracion para darle un toque mas vivo a nuestra pagina.
+                        </p>
+                    </div>
+                </div>                
+            </article>
+            <article class="container">
+                <h4>¿Que necesitamos saber?</h4>
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <p>
+                            En escensia solo hace falta conocimiento de animaciones en CSS y un poco de flexbox. Sumado a un poco de creatividad tendremos un resultado interesante. Asi que aclarando esa duda. ¡Manos a la obra!.
+                        </p>                        
+                    </div>
+                </div>
+            </article>
+        </section>
+        <div class="divider grey container"></div>
+        <section>
+            <article class="container">
+                <h4>Creando Nuestro container</h4>
+                <div class="row valign-wrapper">
+                    <div class="col s12 m6 l8 ">
+                        <p>
+                            Comenzaremos creando la clase del div que sera el que contendrá la lista de palabras que vamos ha animar mas adelante.
+                            Usaremos un display flex para centrar el texto y la propiedad mas importante del truco es el <strong><b>overflow.</b></strong>
+                            
+                        </p>
+                        <p> 
+                            <b>overflow</b> lo que hace es que si el contenido de un elemento se desborda mas alla de las dimensiones del elemento que lo contiene.
+                            En lugar de quedar superpuesto se ocultara. ¿Ya vas pillando el truco ;)?
+                        </p>
+                    </div>
+                    <div class="col s12 m6 l4">
+                        <div class="card-panel black white-text">
+                            <div class="card-content">
+                                <p>
+                                        .scrollbox {<br>
+                                        &nbsp;&nbsp;width: 70%;<br>
+                                        &nbsp;&nbsp;height: 50px;<br>
+                                        &nbsp;&nbsp;display: flex;<br>
+                                        &nbsp;&nbsp;align-items: center;<br>
+                                        &nbsp;&nbsp;justify-content: center;<br>
+                                        &nbsp;&nbsp;font-size: 2rem;<br>
+                                        &nbsp;&nbsp;overflow: hidden;<br>   
+                                        }
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>          
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <p>
+                            Ahora nos enfocaremos en la clase que sera animada: el ul. Como el overflow oculta el contenido desbordante del ul
+                            lo único que deberemos hacer es variar el margen superior. Y este como por arte de magia comenzara a desplazarse dentro del contenedor.
+                            ¡Y listo! tenemos un bonito efecto. Para que veamos en acción esta idea solo debemos animarla con la propiedad animation. 
+                        </p>
+                    </div>  
+                </div>  
+                <div class="row">
+                    <div class="col s12 m6 l6">
+                        <div class="card-panel  black white-text">
+                            <div class="card-content">
+                                <p>
+                                        .scrollbox ul {<br>
+                                            &nbsp;&nbsp;animation: scroll 5s .5s ease-in-out infinite alternate;<br>
+                                        }<br>
+                                        .scrollbox li {<br>
+                                            &nbsp;&nbsp;list-style: none;<br>
+                                            &nbsp;&nbsp;color: white;<br>
+                                            &nbsp;&nbsp;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;<br>
+                                            &nbsp;&nbsp;text-shadow: 2px 2px rgba(0, 0, 0, .4);<br>
+                                            &nbsp;&nbsp;font-size: 3rem;<br>
+                                        }
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="card-panel black white-text">
+                            <div class="card-content">
+                                <p>
+                                    
+                                    @keyframes scroll{<br>
+                                        &nbsp;&nbsp;0%{<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;margin-top: 136px;<br>
+                                        &nbsp;&nbsp;}<br>
+                                        &nbsp;&nbsp;50%{<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;margin-top: 30px;<br>
+                                        &nbsp;&nbsp;}<br>
+                                        &nbsp;&nbsp;100%{<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;margin-top: -85px;<br>
+                                        &nbsp;&nbsp;}<br>
+                                    }
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                 
+                            
+                      
+            </article>
+        </section>
+
+
+
+
+    </main>
+
+
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+</body>
+</html>

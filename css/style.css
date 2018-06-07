@@ -1,0 +1,59 @@
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Do Hyeon', sans-serif;
+}
+        
+p, a {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p{
+    font-size: 1.2rem;
+}
+.scrollbox-container{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
+.scrollbox{
+    width: 70%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    overflow: hidden;
+    
+}
+
+.scrollbox ul {
+    animation: scroll 5s .5s ease-in-out infinite alternate;
+}
+.scrollbox li {
+    list-style: none;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px rgba(0, 0, 0, .4);
+    font-size: 3rem;
+}
+
+
+
+
+
+@keyframes scroll{
+    0%{
+        margin-top: 149px;
+    }
+    50%{
+        margin-top: 30px;         
+    }
+    100%{
+        margin-top: -90px;
+    }
+}
